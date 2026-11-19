@@ -58,6 +58,8 @@ public class Maison_3_9_Velvet_Bolsas extends javax.swing.JFrame {
      */
     public Maison_3_9_Velvet_Bolsas(Boneca boneca) {
         this.boneca = boneca;
+        
+        //testando o git
 
         PainelFundo painelFundo = new PainelFundo("src/imagens/maison_velvet_acessorios_um.png");
         painelFundo.setLayout(null);

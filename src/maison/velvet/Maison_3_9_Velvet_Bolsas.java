@@ -77,7 +77,7 @@ public class Maison_3_9_Velvet_Bolsas extends javax.swing.JFrame {
         criarLabel(770, 400, 220, 150, bolsa_florida, "bolsa_florida");
         criarLabel(1080, 400, 220, 150, bolsa_xadrez, "bolsa_xadrez");
         criarLabel(120, 590, 250, 80, voltar, "voltar");
-
+        
         this.add(bolsa_rosa);
         this.add(bolsa_branca);
         this.add(bolsa_azul);

@@ -50,15 +50,13 @@ public class Maison_2_Velvet_Escolha_Inicial extends javax.swing.JFrame {
 
         initComponents();
         this.peleEscolhida = peleEscolhida;
-        this.cabeloEscolhido = cabeloEscolhido;
-        this.vestimenta = vestimenta;
         this.remove(peleEscolhida);
         PainelFundo painelFundo = new PainelFundo("src/imagens/maison_velvet_escolha.png");
         painelFundo.setLayout(null);
         //setUndecorated(false);
 
         setTitle("Jogo de Vestir");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         setContentPane(painelFundo);
         if (ehInicio) {
@@ -90,11 +88,9 @@ public class Maison_2_Velvet_Escolha_Inicial extends javax.swing.JFrame {
         this.add(pronto);
         this.add(sair);
 
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         mostrarBoneca(boneca);
 
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
-        revalidate();
-        repaint();
     }
 
     public void criarLabelImagens(int x, int y, int largura, int altura, JLabel label, ImageIcon imagem) {
@@ -103,7 +99,7 @@ public class Maison_2_Velvet_Escolha_Inicial extends javax.swing.JFrame {
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
         Image imagemRedimensionada = imagem.getImage()
-                .getScaledInstance(500, 550, Image.SCALE_SMOOTH);
+                .getScaledInstance(200, 550, Image.SCALE_SMOOTH);
 //        label.setHorizontalAlignment(JLabel.CENTER);
         label.setIcon(new ImageIcon(imagemRedimensionada));
     }
@@ -211,7 +207,6 @@ public class Maison_2_Velvet_Escolha_Inicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
- 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

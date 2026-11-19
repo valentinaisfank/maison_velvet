@@ -41,8 +41,6 @@ public class Maison_3_1_Velvet_Pele extends javax.swing.JFrame {
     JLabel boneca_5 = new JLabel();
 
     JLabel peleEscolhida = new JLabel();
-    JLabel cabeloEscolhido = new JLabel();
-    List<JLabel> vestimenta = new ArrayList<>();
 
     ImageIcon boneca_pele_zero = new ImageIcon("src/imagens/bonecas/pele_0.png");
     ImageIcon boneca_pele_um = new ImageIcon("src/imagens/bonecas/pele_1.png");
@@ -55,7 +53,6 @@ public class Maison_3_1_Velvet_Pele extends javax.swing.JFrame {
 
     public Maison_3_1_Velvet_Pele(Boneca boneca) {
         this.boneca = boneca;
-        this.cabeloEscolhido = cabeloEscolhido;
 
         PainelFundo painelFundo = new PainelFundo("src/imagens/maison_velvet_tom_pele.png");
         painelFundo.setLayout(null);
@@ -86,14 +83,8 @@ public class Maison_3_1_Velvet_Pele extends javax.swing.JFrame {
         this.add(pele_cinco);
         this.add(voltar);
         
+        
         mostrarBoneca(boneca);
-
-        this.add(this.cabeloEscolhido);
-        if (vestimenta != null) {
-            for (JLabel v : vestimenta) {
-                this.add(v);
-            }
-        }
 
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         revalidate();
@@ -101,7 +92,7 @@ public class Maison_3_1_Velvet_Pele extends javax.swing.JFrame {
     }
 
     public void criarLabelImagens(int x, int y, int largura, int altura, JLabel label, ImageIcon imagem) {
-        label.setText("  ");
+        label.setText(" ");
         label.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
@@ -112,7 +103,7 @@ public class Maison_3_1_Velvet_Pele extends javax.swing.JFrame {
     }
 
     public void criarLabel(int x, int y, int largura, int altura, JLabel label, String op) {
-        label.setText("  ");
+        label.setText(" ");
         label.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
@@ -173,8 +164,9 @@ public class Maison_3_1_Velvet_Pele extends javax.swing.JFrame {
                         repaint();
                         break;
                 }
-                System.out.println("escolhi a pele ");
+                removerBoneca(boneca);
                 boneca.setPele(peleEscolhida);
+                mostrarBoneca(boneca);
             }
         });
     }
@@ -188,6 +180,19 @@ public class Maison_3_1_Velvet_Pele extends javax.swing.JFrame {
         this.add(boneca.getVestido());
         this.add(boneca.getConjunto());
         this.add(boneca.getPele());
+        revalidate();
+        repaint();
+    }
+    
+        public void removerBoneca(Boneca boneca) {
+        this.remove(boneca.getCabelo());
+        this.remove(boneca.getBolsa());
+        this.remove(boneca.getAcessorio());
+        this.remove(boneca.getRoupaS());
+        this.remove(boneca.getRoupaI());
+        this.remove(boneca.getVestido());
+        this.remove(boneca.getConjunto());
+        this.remove(boneca.getPele());
         revalidate();
         repaint();
     }

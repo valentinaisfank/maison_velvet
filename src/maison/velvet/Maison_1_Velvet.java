@@ -95,7 +95,7 @@ public class Maison_1_Velvet extends javax.swing.JFrame {
                         break;
                     case "modo":
                         dispose();
-                        new Maison_3_8_1_Velvet_Acessorios(new Boneca()).setVisible(true);
+                        
                         break;
 
                 }

@@ -46,9 +46,7 @@ public class Maison_3_5_Velvet_Vestido extends javax.swing.JFrame {
     ImageIcon vestidoverde = new ImageIcon("src/imagens/vestidos/verde.png");
     ImageIcon vestidorosa = new ImageIcon("src/imagens/vestidos/rosa.png");
 
-    /**
-     * Creates new form Maison_7_Velvet_Vestido
-     */
+    
     public Maison_3_5_Velvet_Vestido(Boneca boneca) {
         this.boneca = boneca;
 
@@ -76,30 +74,20 @@ public class Maison_3_5_Velvet_Vestido extends javax.swing.JFrame {
 
         mostrarBoneca(boneca);
 
-        criarLabelImagens(155, 140, 400, 500, amarelo, vestidoamarelo);
-        criarLabelImagens(155, 140, 400, 500, branco, vestidobranco);
-        criarLabelImagens(155, 140, 400, 500, verde, vestidoverde);
-        criarLabelImagens(155, 140, 400, 500, rosa, vestidorosa);
+        criarLabelImagens(110, 75, 350, 450, amarelo, vestidoamarelo);
+        criarLabelImagens(110, 70, 350, 450, branco, vestidobranco);
+        criarLabelImagens(110, 70, 350, 450, verde, vestidoverde);
+        criarLabelImagens(110, 70, 350, 450, rosa, vestidorosa);
 
     }
 
-    /**
-     * Este método faz tal coisa
-     *
-     * @param x
-     * @param y
-     * @param largura
-     * @param altura
-     * @param label
-     * @param imagem
-     */
     public void criarLabelImagens(int x, int y, int largura, int altura, JLabel label, ImageIcon imagem) {
         label.setText("  ");
         label.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
         Image imagemRedimensionada = imagem.getImage()
-                .getScaledInstance(958, 540, Image.SCALE_SMOOTH);
+                .getScaledInstance(505, 650, Image.SCALE_SMOOTH);
 //        label.setHorizontalAlignment(JLabel.CENTER);
         label.setIcon(new ImageIcon(imagemRedimensionada));
     }

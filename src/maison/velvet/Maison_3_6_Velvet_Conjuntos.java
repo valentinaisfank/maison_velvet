@@ -39,10 +39,10 @@ public class Maison_3_6_Velvet_Conjuntos extends javax.swing.JFrame {
     JLabel mrosa = new JLabel();
     JLabel mazul = new JLabel();
 
-    ImageIcon mb = new ImageIcon();
-    ImageIcon mv = new ImageIcon();
-    ImageIcon mr = new ImageIcon();
-    ImageIcon ma = new ImageIcon();
+    ImageIcon mb = new ImageIcon("src/imagens/conjunto/branco.png");
+    ImageIcon mv = new ImageIcon("src/imagens/conjunto/verde.png");
+    ImageIcon mr = new ImageIcon("src/imagens/conjunto/rosa.png");
+    ImageIcon ma = new ImageIcon("src/imagens/conjunto/azul.png");
 
     Boneca boneca = new Boneca();
 
@@ -50,6 +50,7 @@ public class Maison_3_6_Velvet_Conjuntos extends javax.swing.JFrame {
      * Creates new form Maison_8_Velvet_Conjuntos
      */
     public Maison_3_6_Velvet_Conjuntos(Boneca boneca) {
+        this.boneca = boneca;
 
         PainelFundo painelFundo = new PainelFundo("src/imagens/maison_velvet_conjuntos.png");
         painelFundo.setLayout(null);
@@ -72,10 +73,10 @@ public class Maison_3_6_Velvet_Conjuntos extends javax.swing.JFrame {
         this.add(macacao_azul);
         this.add(voltar);
 
-        criarLabelImagens(155, 140, 400, 500, mbranco, mb);
-        criarLabelImagens(155, 140, 400, 500, mverde, mv);
-        criarLabelImagens(155, 140, 400, 500, mrosa, mr);
-        criarLabelImagens(155, 140, 400, 500, mazul, ma);
+        criarLabelImagens(110, -15, 400, 600, mbranco, mb);
+        criarLabelImagens(108,-25, 400, 600, mverde, mv);
+        criarLabelImagens(110,-20, 400, 600, mrosa, mr);
+        criarLabelImagens(110, -20, 400, 600, mazul, ma);
 
         mostrarBoneca(boneca);
 
@@ -91,7 +92,7 @@ public class Maison_3_6_Velvet_Conjuntos extends javax.swing.JFrame {
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
         Image imagemRedimensionada = imagem.getImage()
-                .getScaledInstance(958, 540, Image.SCALE_SMOOTH);
+                .getScaledInstance(500, 550, Image.SCALE_SMOOTH);
 //        label.setHorizontalAlignment(JLabel.CENTER);
         label.setIcon(new ImageIcon(imagemRedimensionada));
     }
@@ -116,7 +117,10 @@ public class Maison_3_6_Velvet_Conjuntos extends javax.swing.JFrame {
 
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                remove (mbranco);
+                remove (mverde);
+                remove (mrosa);
+                remove (mazul);
                 switch (op) {
                     case "voltar":
                         dispose();

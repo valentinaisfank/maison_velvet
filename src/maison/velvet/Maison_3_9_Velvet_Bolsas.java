@@ -44,12 +44,12 @@ public class Maison_3_9_Velvet_Bolsas extends javax.swing.JFrame {
 
     JLabel bolsaEscolhida = new JLabel();
     
-    ImageIcon br = new ImageIcon();
-    ImageIcon bb = new ImageIcon();
-    ImageIcon ba = new ImageIcon();
-    ImageIcon bp = new ImageIcon();
-    ImageIcon bf = new ImageIcon();
-    ImageIcon bx = new ImageIcon();
+    ImageIcon br = new ImageIcon("src/imagens/bolsa/rosa.png");
+    ImageIcon bb = new ImageIcon("src/imagens/bolsa/branco.png");
+    ImageIcon ba = new ImageIcon("src/imagens/bolsa/azul.png");
+    ImageIcon bp = new ImageIcon("src/imagens/bolsa/palha.png");
+    ImageIcon bf = new ImageIcon("src/imagens/bolsa/florido.png");
+    ImageIcon bx = new ImageIcon("src/imagens/bolsa/oecobag.png");
 
     Boneca boneca = new Boneca();
 
@@ -59,9 +59,7 @@ public class Maison_3_9_Velvet_Bolsas extends javax.swing.JFrame {
     public Maison_3_9_Velvet_Bolsas(Boneca boneca) {
         this.boneca = boneca;
         
-        //testando o git
-
-        PainelFundo painelFundo = new PainelFundo("src/imagens/maison_velvet_acessorios_um.png");
+        PainelFundo painelFundo = new PainelFundo("src/imagens/maison_velvet_bolsa.png");
         painelFundo.setLayout(null);
         setUndecorated(false);
 

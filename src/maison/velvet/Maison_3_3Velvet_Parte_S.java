@@ -56,23 +56,22 @@ public class Maison_3_3Velvet_Parte_S extends javax.swing.JFrame {
 
     Boneca boneca = new Boneca();
 
-    ImageIcon rv = new ImageIcon();
-    ImageIcon rp = new ImageIcon();
-    ImageIcon br = new ImageIcon();
-    ImageIcon ra = new ImageIcon();
-    ImageIcon bm = new ImageIcon();
-    ImageIcon rf = new ImageIcon();
-    ImageIcon ba = new ImageIcon();
-    ImageIcon rr = new ImageIcon();
-    ImageIcon bv = new ImageIcon();
-    ImageIcon cb = new ImageIcon();
-    ImageIcon bb = new ImageIcon();
-    ImageIcon cr = new ImageIcon();
+    ImageIcon rv = new ImageIcon("src/imagens/blusas/vermelho.png");
+    ImageIcon rp = new ImageIcon("src/imagens/blusas/preto.png");
+    ImageIcon br = new ImageIcon("src/imagens/blusas/rosa.png");
+    ImageIcon ra = new ImageIcon("src/imagens/blusas/azulx.png");
+    ImageIcon bm = new ImageIcon("src/imagens/blusas/marrom.png");
+    ImageIcon rf = new ImageIcon("src/imagens/blusas/florido.png");
+    ImageIcon ba = new ImageIcon("src/imagens/blusas/azul.png");
+    ImageIcon rr = new ImageIcon("src/imagens/blusas/rosax.png");
+    ImageIcon bv = new ImageIcon("src/imagens/blusas/verde.png");
+    ImageIcon cb = new ImageIcon("src/imagens/blusas/moletom.png");
+    ImageIcon bb = new ImageIcon("src/imagens/blusas/branco.png");
+    ImageIcon cr = new ImageIcon("src/imagens/blusas/roxo.png");
 
-    /**
-     * Creates new form Maison_Velvet_Parte_S
-     */
+    
     public Maison_3_3Velvet_Parte_S(Boneca boneca) {
+        this.boneca = boneca;
 
         PainelFundo painelFundo = new PainelFundo("src/imagens/maison_velvet_parte_s.png");
         painelFundo.setLayout(null);
@@ -111,18 +110,18 @@ public class Maison_3_3Velvet_Parte_S extends javax.swing.JFrame {
         this.add(camisaRosa);
         this.add(voltar);
 
-        criarLabelImagens(155, 140, 400, 500, vermelha, rv);
-        criarLabelImagens(155, 140, 400, 500, preta, rp);
-        criarLabelImagens(155, 140, 400, 500, rosa_1, br);
-        criarLabelImagens(155, 140, 400, 500, azul_1, ra);
-        criarLabelImagens(155, 140, 400, 500, marrom, bm);
-        criarLabelImagens(155, 140, 400, 500, florida, rf);
-        criarLabelImagens(155, 140, 400, 500, azul_2, ba);
-        criarLabelImagens(155, 140, 400, 500, roxa, rr);
-        criarLabelImagens(155, 140, 400, 500, verde, bv);
-        criarLabelImagens(155, 140, 400, 500, branco_1, cb);
-        criarLabelImagens(155, 140, 400, 500, branca_2, bb);
-        criarLabelImagens(155, 140, 400, 500, rosa_2, cr);
+        criarLabelImagens(133, 85, 400, 500, vermelha, rv);
+        criarLabelImagens(133, 90, 400, 500, preta, rp);
+        criarLabelImagens(133, 95, 400, 500, rosa_1, br);
+        criarLabelImagens(133, 90, 400, 500, azul_1, ra);
+        criarLabelImagens(133, 90, 400, 500, marrom, bm);
+        criarLabelImagens(133, 90, 400, 500, florida, rf);
+        criarLabelImagens(130, 90, 400, 500, azul_2, ba);
+        criarLabelImagens(130, 95, 400, 500, roxa, rr);
+        criarLabelImagens(133, 95, 400, 500, verde, bv);
+        criarLabelImagens(133, 95, 400, 500, branco_1, cb);
+        criarLabelImagens(133, 95, 400, 500, branca_2, bb);
+        criarLabelImagens(133, 90, 400, 500, rosa_2, cr);
 
         mostrarBoneca(boneca);
 
@@ -137,7 +136,7 @@ public class Maison_3_3Velvet_Parte_S extends javax.swing.JFrame {
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
         Image imagemRedimensionada = imagem.getImage()
-                .getScaledInstance(958, 540, Image.SCALE_SMOOTH);
+                .getScaledInstance(480, 505, Image.SCALE_SMOOTH);
 //        label.setHorizontalAlignment(JLabel.CENTER);
         label.setIcon(new ImageIcon(imagemRedimensionada));
     }
@@ -162,8 +161,19 @@ public class Maison_3_3Velvet_Parte_S extends javax.swing.JFrame {
 
             @Override
             public void mouseClicked(MouseEvent e) {
+                remove (blusaEscolhida);
+                remove(vermelha);
+                remove(preta);
+                remove(rosa_1);
+                remove(azul_1);
+                remove(marrom);
+                remove(florida);
+                remove(roxa);
+                remove(verde);
+                remove(branco_1);
+                remove(branca_2);
+                remove(rosa_2);     
                 switch (op) {
-
                     case "voltar":
                         dispose();
                         new Maison_2_Velvet_Escolha_Inicial(false, boneca).setVisible(true);
@@ -186,6 +196,9 @@ public class Maison_3_3Velvet_Parte_S extends javax.swing.JFrame {
                     case "regata_florida":
                         blusaEscolhida = florida;
                         break;
+                    case "blusa_azul":
+                        blusaEscolhida = azul_2;
+                        break;
                     case "regata_roxa":
                         blusaEscolhida = roxa;
                         break;
@@ -201,28 +214,28 @@ public class Maison_3_3Velvet_Parte_S extends javax.swing.JFrame {
                     case "camisa_rosa":
                         blusaEscolhida = rosa_2;
                         break;
-                    
-
                 }
-                boneca.setVestido(blusaEscolhida);
+                boneca.setRoupaS(blusaEscolhida);
                 mostrarBoneca(boneca);
             }
         });
     }
 
     public void mostrarBoneca(Boneca boneca) {
+        this.add(boneca.getRoupaS());
         this.add(boneca.getCabelo());
+        this.add(boneca.getConjunto());
         this.add(boneca.getBolsa());
         this.add(boneca.getAcessorio());
-        this.add(boneca.getRoupaS());
         this.add(boneca.getRoupaI());
         this.add(boneca.getVestido());
-        this.add(boneca.getConjunto());
         this.add(boneca.getPele());
         revalidate();
         repaint();
-
-    }
+        }
+        
+        
+     
 
     /**
      * This method is called from within the constructor to initialize the form.

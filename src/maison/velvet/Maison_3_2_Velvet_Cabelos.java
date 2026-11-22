@@ -59,7 +59,7 @@ public class Maison_3_2_Velvet_Cabelos extends javax.swing.JFrame {
     ImageIcon cabelo_tres = new ImageIcon("src/imagens/cabelos/tres.png");
     ImageIcon cabelo_quatro = new ImageIcon("src/imagens/cabelos/quatro.png");
     ImageIcon cabelo_cinco = new ImageIcon("src/imagens/cabelos/cinco.png");
-    ImageIcon cebelo_seis = new ImageIcon("src/imagens/cabelos/seis.png");
+    ImageIcon cabelo_seis = new ImageIcon("src/imagens/cabelos/seis.png");
     ImageIcon cabelo_sete = new ImageIcon("src/imagens/cabelos/sete.png");
     ImageIcon cabelo_oito = new ImageIcon("src/imagens/cabelos/oito.png");
     ImageIcon cabelo_nove = new ImageIcon("src/imagens/cabelos/nove.png");
@@ -108,16 +108,16 @@ public class Maison_3_2_Velvet_Cabelos extends javax.swing.JFrame {
 
         mostrarBoneca(boneca);
 
-        criarLabelImagens(150, -120, 400, 800, c1, cebelo_um);
-        criarLabelImagens(150, -120, 400, 800, c2, cabelo_dois);
-        criarLabelImagens(150, -120, 400, 800, c3, cabelo_tres);
-        criarLabelImagens(150, -120, 400, 800, c4, cabelo_quatro);
-        criarLabelImagens(150, -120, 400, 800, c5, cabelo_cinco);
-        criarLabelImagens(150, -120, 400, 800, c6, cebelo_seis);
-        criarLabelImagens(150, -120, 400, 800, c7, cabelo_sete);
-        criarLabelImagens(150, -120, 400, 800, c8, cabelo_oito);
-        criarLabelImagens(150, -120, 400, 800, c9, cabelo_nove);
-        criarLabelImagens(150, -120, 400, 800, c10, cabelo_dez);
+        criarLabelImagens(142, -92, 400, 800, c1, cebelo_um);
+        criarLabelImagens(142, -92, 400, 800, c2, cabelo_dois);
+        criarLabelImagens(142, -92, 400, 800, c3, cabelo_tres);
+        criarLabelImagens(145, -92, 400, 800, c4, cabelo_quatro);
+        criarLabelImagens(145, -92, 400, 800, c5, cabelo_cinco);
+        criarLabelImagens(142, -92, 400, 800, c6, cabelo_seis);
+        criarLabelImagens(142, -92, 400, 800, c7, cabelo_sete);
+        criarLabelImagens(145, -92, 400, 800, c8, cabelo_oito);
+        criarLabelImagens(142, -92, 400, 800, c9, cabelo_nove);
+        criarLabelImagens(142, -90, 400, 800, c10, cabelo_dez);
 
         this.add(this.peleEscolhida);
         this.add(this.cabeloEscolhido);
@@ -142,14 +142,14 @@ public class Maison_3_2_Velvet_Cabelos extends javax.swing.JFrame {
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
         Image imagemRedimensionada = imagem.getImage()
-                .getScaledInstance(500, 550, Image.SCALE_SMOOTH);
+                .getScaledInstance(550, 600, Image.SCALE_SMOOTH);
 //        label.setHorizontalAlignment(JLabel.CENTER);
         label.setIcon(new ImageIcon(imagemRedimensionada));
     }
 
     public void criarLabel(int x, int y, int largura, int altura, JLabel label, String op) {
         label.setText("  ");
-//        label.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+        label.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
 //        label.setBounds(x, y, 232, 90);

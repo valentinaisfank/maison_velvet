@@ -41,10 +41,7 @@ public class Maison_3_7_Velvet_Sapatos extends javax.swing.JFrame {
     JLabel coturno = new JLabel();
     JLabel voltar = new JLabel();
 
-    @Override
-    public Component add(Component comp) {
-        return super.add(comp); //To change body of generated methods, choose Tools | Templates.
-    }
+   
     JLabel sapatoEscolhido = new JLabel();
     
     JLabel trosa = new JLabel();
@@ -62,25 +59,22 @@ public class Maison_3_7_Velvet_Sapatos extends javax.swing.JFrame {
     
     Boneca boneca = new Boneca();
     
-    ImageIcon tr = new ImageIcon();
-    ImageIcon tas = new ImageIcon();
-    ImageIcon sb = new ImageIcon();
-    ImageIcon sp = new ImageIcon();
-    ImageIcon cb = new ImageIcon();
-    ImageIcon cp = new ImageIcon();
-    ImageIcon bc = new ImageIcon();
-    ImageIcon bp = new ImageIcon();
-    ImageIcon tb = new ImageIcon();
-    ImageIcon tp = new ImageIcon();
-    ImageIcon cr = new ImageIcon();
-    ImageIcon c = new ImageIcon();
+    ImageIcon tr = new ImageIcon("src/imagens/sapatos/rosa.png");
+    ImageIcon tas = new ImageIcon("src/imagens/sapatos/allstar.png");
+    ImageIcon sb = new ImageIcon("src/imagens/sapatos/sandalia.png");
+    ImageIcon sp = new ImageIcon("src/imagens/sapatos/social.png");
+    ImageIcon cb = new ImageIcon("src/imagens/sapatos/chinelo.png");
+    ImageIcon cp = new ImageIcon("src/imagens/sapatos/vermelho.png");
+    ImageIcon bc = new ImageIcon("src/imagens/sapatos/bota.png");
+    ImageIcon bp = new ImageIcon("src/imagens/sapatos/marrom.png");
+    ImageIcon tb = new ImageIcon("src/imagens/sapatos/sapatilha.png");
+    ImageIcon tp = new ImageIcon("src/imagens/sapatos/branco.png");
+    ImageIcon cr = new ImageIcon("src/imagens/sapatos/tenis.png");
+    ImageIcon c = new ImageIcon("src/imagens/sapatos/coturno.png");
     
 
-    /**
-     * Creates new form Maison_9_Velvet_Sapatos
-     */
     public Maison_3_7_Velvet_Sapatos(Boneca boneca) {
-
+        this.boneca = boneca;
     
 
         PainelFundo painelFundo = new PainelFundo("src/imagens/maison_velvet_sapatos.png");
@@ -100,10 +94,10 @@ public class Maison_3_7_Velvet_Sapatos extends javax.swing.JFrame {
         criarLabel(630, 350, 220, 150, chinelo_preto, "chinelo_preto");
         criarLabel(880, 350, 220, 150, bota_cowboy, "bota_cowboy");
         criarLabel(1130, 350, 220, 150, bota_preta, "bota_preto");
-        criarLabel(380, 540, 220, 150, tenis_branco, "tenis_branco");
-        criarLabel(630, 180, 220, 150, tenis_preto, "tenis_preto");
-        criarLabel(880, 180, 220, 150, crocs, "crocs");
-        criarLabel(1130, 180, 220, 150, coturno, "coturno");
+        criarLabel(380, 520, 220, 150, tenis_branco, "tenis_branco");
+        criarLabel(630, 530, 220, 150, tenis_preto, "tenis_preto");
+        criarLabel(880, 530, 220, 150, crocs, "crocs");
+        criarLabel(1130, 520, 220, 150, coturno, "coturno");
         criarLabel(100, 590, 250, 80, voltar, "voltar");
 
         this.add(tenis_rosa);
@@ -120,17 +114,18 @@ public class Maison_3_7_Velvet_Sapatos extends javax.swing.JFrame {
         this.add(coturno);
         this.add(voltar);
         
-        criarLabelImagens(155, 140, 400, 500, trosa, tr);
-        criarLabelImagens(155, 140, 400, 500, tallstar, tas);
-        criarLabelImagens(155, 140, 400, 500, sbranco, sb);
-        criarLabelImagens(155, 140, 400, 500, spreto, sp);
-        criarLabelImagens(155, 140, 400, 500, cbranco, cb);
-        criarLabelImagens(155, 140, 400, 500, cpreto, cp);
-        criarLabelImagens(155, 140, 400, 500, bcowboy, bc);
-        criarLabelImagens(155, 140, 400, 500, bpreta, bp);
-        criarLabelImagens(155, 140, 400, 500, tbranco, tb);
-        criarLabelImagens(155, 140, 400, 500, croc, cr);
-        criarLabelImagens(155, 140, 400, 500, coturn, c);
+        criarLabelImagens(138, 420, 400, 500, trosa, tr);
+        criarLabelImagens(138, 420, 400, 500, tallstar, tas);
+        criarLabelImagens(138, 420, 400, 500, sbranco, sb);
+        criarLabelImagens(138, 420, 400, 500, spreto, sp);
+        criarLabelImagens(138, 420, 400, 500, cbranco, cb);
+        criarLabelImagens(138, 420, 400, 500, cpreto, cp);
+        criarLabelImagens(138, 420, 400, 500, bcowboy, bc);
+        criarLabelImagens(138, 420, 400, 500, bpreta, bp);
+        criarLabelImagens(138, 420, 400, 500, tbranco, tb);
+        criarLabelImagens(138, 420, 400, 500, tpreto, tp);
+        criarLabelImagens(138, 420, 400, 500, croc, cr);
+        criarLabelImagens(138, 420, 400, 500, coturn, c);
 
         
         mostrarBoneca(boneca);
@@ -153,7 +148,7 @@ public class Maison_3_7_Velvet_Sapatos extends javax.swing.JFrame {
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
         Image imagemRedimensionada = imagem.getImage()
-                .getScaledInstance(958, 540, Image.SCALE_SMOOTH);
+                .getScaledInstance(500, 540, Image.SCALE_SMOOTH);
 //        label.setHorizontalAlignment(JLabel.CENTER);
         label.setIcon(new ImageIcon(imagemRedimensionada));
     }
@@ -178,12 +173,24 @@ public class Maison_3_7_Velvet_Sapatos extends javax.swing.JFrame {
 
             @Override
             public void mouseClicked(MouseEvent e) {
+                remove(trosa);
+                remove(tallstar);
+                remove(sbranco);
+                remove(spreto);
+                remove(cbranco);
+                remove(cpreto);
+                remove(bcowboy);
+                remove(bpreta);
+                remove(tbranco);
+                remove(tpreto);
+                remove(croc);
+                remove(coturn);
                 switch (op) {
                     case "voltar":
                         dispose();
                         new Maison_2_Velvet_Escolha_Inicial(false, boneca).setVisible(true);
                         break;
-                    case "rosarosa":
+                    case "tenis_rosa":
                         sapatoEscolhido = trosa;
                         break;
                     case "tenis_allstar":
@@ -220,7 +227,7 @@ public class Maison_3_7_Velvet_Sapatos extends javax.swing.JFrame {
                         sapatoEscolhido = coturn;
                         break;   
                 }
-                boneca.setVestido(sapatoEscolhido);
+                boneca.setSapato(sapatoEscolhido);
                 mostrarBoneca(boneca);
             }
         });

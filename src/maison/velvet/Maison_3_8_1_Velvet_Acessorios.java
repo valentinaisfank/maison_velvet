@@ -46,12 +46,12 @@ public class Maison_3_8_1_Velvet_Acessorios extends javax.swing.JFrame {
 
     Boneca boneca = new Boneca();
 
-    ImageIcon oq = new ImageIcon();
-    ImageIcon oc = new ImageIcon();
-    ImageIcon or = new ImageIcon();
-    ImageIcon cp = new ImageIcon();
-    ImageIcon br = new ImageIcon();
-    ImageIcon tb = new ImageIcon();
+    ImageIcon oq = new ImageIcon("src/imagens/acessorios/oculos.png");
+    ImageIcon oc = new ImageIcon("src/imagens/acessorios/coracao.png");
+    ImageIcon or = new ImageIcon("src/imagens/acessorios/redondo.png");
+    ImageIcon cp = new ImageIcon("src/imagens/acessorios/chapeu.png");
+    ImageIcon br = new ImageIcon("src/imagens/acessorios/boina.png");
+    ImageIcon tb = new ImageIcon("src/imagens/acessorios/tiara.png");
 
     /**
      * Creates new form Maison_10_Velvet_Acessorios
@@ -107,7 +107,7 @@ public class Maison_3_8_1_Velvet_Acessorios extends javax.swing.JFrame {
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
         Image imagemRedimensionada = imagem.getImage()
-                .getScaledInstance(958, 540, Image.SCALE_SMOOTH);
+                .getScaledInstance(500, 540, Image.SCALE_SMOOTH);
 //        label.setHorizontalAlignment(JLabel.CENTER);
         label.setIcon(new ImageIcon(imagemRedimensionada));
     }
@@ -132,13 +132,17 @@ public class Maison_3_8_1_Velvet_Acessorios extends javax.swing.JFrame {
 
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                remove(oquadrado);
+                remove(ocoracao);
+                remove(oredondo);
+                remove(cpalha);
+                remove(brosa);
+                remove(tbranca);
                 switch (op) {
                     case "voltar":
                         dispose();
                         new Maison_2_Velvet_Escolha_Inicial(false, boneca).setVisible(true);
                         break;
-
                     case "proximo":
                         dispose();
                         new Maison_3_8_2_Velvet_Acessorios(boneca).setVisible(true);
@@ -162,7 +166,7 @@ public class Maison_3_8_1_Velvet_Acessorios extends javax.swing.JFrame {
                         acessorioEscolhido = tbranca;
                         break;
                 }
-                boneca.setVestido(acessorioEscolhido);
+                boneca.setAcessorio(acessorioEscolhido);
                 mostrarBoneca(boneca);
             }
         });

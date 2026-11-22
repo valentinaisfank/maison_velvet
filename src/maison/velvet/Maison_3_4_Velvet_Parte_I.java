@@ -56,10 +56,6 @@ public class Maison_3_4_Velvet_Parte_I extends javax.swing.JFrame {
     ImageIcon sj = new ImageIcon("src/imagens/calca/shorts.png");
     ImageIcon sr = new ImageIcon("src/imagens/calca/rosa.png");
 
-    /**
-     *
-     * Creates new form Maison_Velvet_Parte_I
-     */
     public Maison_3_4_Velvet_Parte_I(Boneca boneca) {
         this.boneca = boneca;
 

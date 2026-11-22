@@ -46,12 +46,12 @@ public class Maison_3_8_2_Velvet_Acessorios extends javax.swing.JFrame {
 
     Boneca boneca = new Boneca();
     
-    ImageIcon lr = new ImageIcon();
-    ImageIcon cx = new ImageIcon();
-    ImageIcon fa = new ImageIcon();
-    ImageIcon fr = new ImageIcon();
-    ImageIcon lf = new ImageIcon();
-    ImageIcon gb = new ImageIcon();
+    ImageIcon lr = new ImageIcon("src/imagens/acessorios/laco.png");
+    ImageIcon cx = new ImageIcon("src/imagens/acessorios/xadres.png");
+    ImageIcon fa = new ImageIcon("src/imagens/acessorios/azul.png");
+    ImageIcon fr = new ImageIcon("src/imagens/acessorios/rosa.png");
+    ImageIcon lf = new ImageIcon("src/imagens/acessorios/leque.png");
+    ImageIcon gb = new ImageIcon("src/imagens/acessorios/colar.png");
 
     /**
      * Creates new form Maison_10_Velvet_Acessorios
@@ -164,7 +164,7 @@ public class Maison_3_8_2_Velvet_Acessorios extends javax.swing.JFrame {
                         break;
                              
                 }
-                boneca.setVestido(acessorioEscolhido);
+                boneca.setAcessorio(acessorioEscolhido);
                 mostrarBoneca(boneca);
             }
         });

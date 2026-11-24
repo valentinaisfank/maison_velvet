@@ -84,12 +84,12 @@ public class Maison_3_9_Velvet_Bolsas extends javax.swing.JFrame {
         this.add(bolsa_xadrez);
         this.add(voltar);
         
-        criarLabelImagens(155, 140, 400, 500, brosa, br);
-        criarLabelImagens(155, 140, 400, 500, bbranca, bb);
-        criarLabelImagens(155, 140, 400, 500, bazul, ba);
-        criarLabelImagens(155, 140, 400, 500, bpalha, bp);
-        criarLabelImagens(155, 140, 400, 500, bflorida, bf);
-        criarLabelImagens(155, 140, 400, 500, bxadrez, bx);
+        criarLabelImagens(-10, 100, 400, 500, brosa, br);
+        criarLabelImagens(-10, 100, 400, 500, bbranca, bb);
+        criarLabelImagens(-10, 100, 400, 500, bazul, ba);
+        criarLabelImagens(-10, 100, 400, 500, bpalha, bp);
+        criarLabelImagens(-10, 100, 400, 500, bflorida, bf);
+        criarLabelImagens(-10, 100, 400, 500, bxadrez, bx);
         
 
         mostrarBoneca(boneca);
@@ -102,18 +102,16 @@ public class Maison_3_9_Velvet_Bolsas extends javax.swing.JFrame {
     
     public void criarLabelImagens(int x, int y, int largura, int altura, JLabel label, ImageIcon imagem) {
         label.setText("  ");
-        label.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
         Image imagemRedimensionada = imagem.getImage()
-                .getScaledInstance(958, 540, Image.SCALE_SMOOTH);
+                .getScaledInstance(479, 270, Image.SCALE_SMOOTH);
 //        label.setHorizontalAlignment(JLabel.CENTER);
         label.setIcon(new ImageIcon(imagemRedimensionada));
     }
 
     public void criarLabel(int x, int y, int largura, int altura, JLabel label, String op) {
         label.setText("  ");
-        label.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
 //        label.setBounds(x, y, 232, 90);
@@ -131,6 +129,12 @@ public class Maison_3_9_Velvet_Bolsas extends javax.swing.JFrame {
 
             @Override
             public void mouseClicked(MouseEvent e) {
+                remove(brosa);
+                remove(bbranca);
+                remove(bazul);
+                remove(bpalha);
+                remove(bflorida);
+                remove(bxadrez);
 
                 switch (op) {
                     case "voltar":
@@ -156,7 +160,10 @@ public class Maison_3_9_Velvet_Bolsas extends javax.swing.JFrame {
                         bolsaEscolhida = bxadrez;
                         break;
                 }
-                boneca.setVestido(bolsaEscolhida);
+                if ("voltar".equals(op)) {
+                    return;
+                }
+                boneca.setBolsa(bolsaEscolhida);
                 mostrarBoneca(boneca);
             }
         });
@@ -170,6 +177,7 @@ public class Maison_3_9_Velvet_Bolsas extends javax.swing.JFrame {
         this.add(boneca.getRoupaI());
         this.add(boneca.getVestido());
         this.add(boneca.getConjunto());
+        this.add(boneca.getSapato());
         this.add(boneca.getPele());
         revalidate();
         repaint();

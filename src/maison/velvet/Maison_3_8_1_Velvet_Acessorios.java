@@ -103,7 +103,6 @@ public class Maison_3_8_1_Velvet_Acessorios extends javax.swing.JFrame {
 
     public void criarLabelImagens(int x, int y, int largura, int altura, JLabel label, ImageIcon imagem) {
         label.setText("  ");
-        label.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
         Image imagemRedimensionada = imagem.getImage()
@@ -114,7 +113,6 @@ public class Maison_3_8_1_Velvet_Acessorios extends javax.swing.JFrame {
 
     public void criarLabel(int x, int y, int largura, int altura, JLabel label, String op) {
         label.setText("  ");
-        label.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
 //        label.setBounds(x, y, 232, 90);
@@ -166,6 +164,9 @@ public class Maison_3_8_1_Velvet_Acessorios extends javax.swing.JFrame {
                         acessorioEscolhido = tbranca;
                         break;
                 }
+                if ("voltar".equals(op) || "proximo".equals(op)) {
+                    return;
+                }
                 boneca.setAcessorio(acessorioEscolhido);
                 mostrarBoneca(boneca);
             }
@@ -216,4 +217,3 @@ public class Maison_3_8_1_Velvet_Acessorios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
-

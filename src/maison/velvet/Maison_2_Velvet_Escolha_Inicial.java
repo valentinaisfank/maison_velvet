@@ -48,7 +48,6 @@ public class Maison_2_Velvet_Escolha_Inicial extends javax.swing.JFrame {
     public Maison_2_Velvet_Escolha_Inicial(boolean ehInicio, Boneca boneca) {
         this.boneca = boneca;
 
-        initComponents();
         this.peleEscolhida = peleEscolhida;
         this.remove(peleEscolhida);
         PainelFundo painelFundo = new PainelFundo("src/imagens/maison_velvet_escolha.png");
@@ -59,10 +58,9 @@ public class Maison_2_Velvet_Escolha_Inicial extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         setContentPane(painelFundo);
-        if (ehInicio) {
-            criarLabelImagens(110, -120, 400, 800, pele_0, boneca_pele_zero);
-            this.add(pele_0);
-            boneca.setPele(pele_0);
+        if (ehInicio || this.boneca.getPele().getIcon() == null) {
+            criarLabelImagens(120, -122, 410, 800, pele_0, boneca_pele_zero);
+            this.boneca.setPele(pele_0);
         }
 
         criarLabel(470, 215, 232, 90, pele, "pele");
@@ -88,14 +86,13 @@ public class Maison_2_Velvet_Escolha_Inicial extends javax.swing.JFrame {
         this.add(pronto);
         this.add(sair);
 
+        mostrarBoneca(this.boneca);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        mostrarBoneca(boneca);
 
     }
 
     public void criarLabelImagens(int x, int y, int largura, int altura, JLabel label, ImageIcon imagem) {
         label.setText("  ");
-        label.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
         Image imagemRedimensionada = imagem.getImage()
@@ -106,7 +103,6 @@ public class Maison_2_Velvet_Escolha_Inicial extends javax.swing.JFrame {
 
     public void criarLabel(int x, int y, int largura, int altura, JLabel label, String op) {
         label.setText("  ");
-        label.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
 //        label.setBounds(x, y, 232, 90);
@@ -153,11 +149,11 @@ public class Maison_2_Velvet_Escolha_Inicial extends javax.swing.JFrame {
                         dispose();
                         new Maison_3_7_Velvet_Sapatos(boneca).setVisible(true);
                         break;
-                    case "acessorios":
+                    case "acessorio":
                         dispose();
-                        new Maison_3_8_1_Velvet_Acessorios(boneca).setVisible(true);
+                        new Maison_3_8_2_Velvet_Acessorios(boneca).setVisible(true);
                         break;
-                    case "bolsas":
+                    case "bolsa":
                         dispose();
                         new Maison_3_9_Velvet_Bolsas(boneca).setVisible(true);
                         break;
@@ -170,14 +166,15 @@ public class Maison_2_Velvet_Escolha_Inicial extends javax.swing.JFrame {
     }
 
     public void mostrarBoneca(Boneca boneca) {
-        this.add(boneca.getPele());
         this.add(boneca.getCabelo());
+        this.add(boneca.getBolsa());
+        this.add(boneca.getAcessorio());
         this.add(boneca.getRoupaS());
         this.add(boneca.getRoupaI());
         this.add(boneca.getVestido());
         this.add(boneca.getConjunto());
-        this.add(boneca.getAcessorio());
-        this.add(boneca.getBolsa());
+        this.add(boneca.getSapato());
+        this.add(boneca.getPele());
         revalidate();
         repaint();
     }

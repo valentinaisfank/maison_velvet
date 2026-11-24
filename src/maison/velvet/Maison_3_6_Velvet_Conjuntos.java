@@ -88,7 +88,6 @@ public class Maison_3_6_Velvet_Conjuntos extends javax.swing.JFrame {
 
     public void criarLabelImagens(int x, int y, int largura, int altura, JLabel label, ImageIcon imagem) {
         label.setText("  ");
-        label.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
         Image imagemRedimensionada = imagem.getImage()
@@ -99,7 +98,6 @@ public class Maison_3_6_Velvet_Conjuntos extends javax.swing.JFrame {
 
     public void criarLabel(int x, int y, int largura, int altura, JLabel label, String op) {
         label.setText("  ");
-        label.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
 //        label.setBounds(x, y, 232, 90);
@@ -140,7 +138,16 @@ public class Maison_3_6_Velvet_Conjuntos extends javax.swing.JFrame {
                         break;
 
                 }
-                boneca.setVestido(conjuntoEscolhido);
+                if ("voltar".equals(op)) {
+                    return;
+                }
+                remove(boneca.getRoupaS());
+                remove(boneca.getRoupaI());
+                remove(boneca.getVestido());
+                boneca.setConjunto(conjuntoEscolhido);
+                boneca.setRoupaS(new JLabel());
+                boneca.setRoupaI(new JLabel());
+                boneca.setVestido(new JLabel());
                 mostrarBoneca(boneca);
 
             }

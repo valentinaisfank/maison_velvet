@@ -88,12 +88,12 @@ public class Maison_3_8_2_Velvet_Acessorios extends javax.swing.JFrame {
         this.add(voltar);
         this.add(proximo);
         
-        criarLabelImagens(155, 140, 400, 500, lrosa, lr);
-        criarLabelImagens(155, 140, 400, 500, cxadres, cx);
-        criarLabelImagens(155, 140, 400, 500, fazul, fa);
-        criarLabelImagens(155, 140, 400, 500, frosa, fr);
-        criarLabelImagens(155, 140, 400, 500, lflorido, lf);
-        criarLabelImagens(155, 140, 400, 500, gbranca, gb);
+        criarLabelImagens(120, -150, 400, 500, lrosa, lr);
+        criarLabelImagens(135, -160, 400, 500, cxadres, cx);
+        criarLabelImagens(135, -160, 400, 500, fazul, fa);
+        criarLabelImagens(135, -160, 400, 500, frosa, fr);
+        criarLabelImagens(250, 130, 400, 500, lflorido, lf);
+        criarLabelImagens(135, -170, 400, 500, gbranca, gb);
 
         mostrarBoneca(boneca);
 
@@ -107,7 +107,7 @@ public class Maison_3_8_2_Velvet_Acessorios extends javax.swing.JFrame {
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
         Image imagemRedimensionada = imagem.getImage()
-                .getScaledInstance(958, 540, Image.SCALE_SMOOTH);
+                .getScaledInstance(300, 280, Image.SCALE_SMOOTH);
 //        label.setHorizontalAlignment(JLabel.CENTER);
         label.setIcon(new ImageIcon(imagemRedimensionada));
     }
@@ -137,6 +137,7 @@ public class Maison_3_8_2_Velvet_Acessorios extends javax.swing.JFrame {
                 remove(frosa);
                 remove(lflorido);
                 remove(gbranca);
+                remove(boneca.getAcessorio());
 
                 switch (op) {
                     case "voltar":
@@ -178,9 +179,9 @@ public class Maison_3_8_2_Velvet_Acessorios extends javax.swing.JFrame {
     }
 
     public void mostrarBoneca(Boneca boneca) {
+        this.add(boneca.getAcessorio());
         this.add(boneca.getCabelo());
         this.add(boneca.getBolsa());
-        this.add(boneca.getAcessorio());
         this.add(boneca.getRoupaS());
         this.add(boneca.getRoupaI());
         this.add(boneca.getVestido());

@@ -49,7 +49,7 @@ public class Maison_3_9_Velvet_Bolsas extends javax.swing.JFrame {
     ImageIcon ba = new ImageIcon("src/imagens/bolsa/azul.png");
     ImageIcon bp = new ImageIcon("src/imagens/bolsa/palha.png");
     ImageIcon bf = new ImageIcon("src/imagens/bolsa/florido.png");
-    ImageIcon bx = new ImageIcon("src/imagens/bolsa/oecobag.png");
+    ImageIcon bx = new ImageIcon("src/imagens/bolsa/ecobag.png");
 
     Boneca boneca = new Boneca();
 
@@ -84,12 +84,12 @@ public class Maison_3_9_Velvet_Bolsas extends javax.swing.JFrame {
         this.add(bolsa_xadrez);
         this.add(voltar);
         
-        criarLabelImagens(-10, 100, 400, 500, brosa, br);
-        criarLabelImagens(-10, 100, 400, 500, bbranca, bb);
-        criarLabelImagens(-10, 100, 400, 500, bazul, ba);
-        criarLabelImagens(-10, 100, 400, 500, bpalha, bp);
-        criarLabelImagens(-10, 100, 400, 500, bflorida, bf);
-        criarLabelImagens(-10, 100, 400, 500, bxadrez, bx);
+        criarLabelImagens(-27, 125, 400, 500, brosa, br);
+        criarLabelImagens(-25, 125, 400, 500, bbranca, bb);
+        criarLabelImagens(-28, 125, 400, 500, bazul, ba);
+        criarLabelImagens(-25, 125, 400, 500, bpalha, bp);
+        criarLabelImagens(-25, 125, 400, 500, bflorida, bf);
+        criarLabelImagens(-25, 125, 400, 500, bxadrez, bx);
         
 
         mostrarBoneca(boneca);
@@ -135,6 +135,7 @@ public class Maison_3_9_Velvet_Bolsas extends javax.swing.JFrame {
                 remove(bpalha);
                 remove(bflorida);
                 remove(bxadrez);
+                remove(boneca.getBolsa());
 
                 switch (op) {
                     case "voltar":
@@ -170,9 +171,9 @@ public class Maison_3_9_Velvet_Bolsas extends javax.swing.JFrame {
     }
 
     public void mostrarBoneca(Boneca boneca) {
+        this.add(boneca.getAcessorio());
         this.add(boneca.getCabelo());
         this.add(boneca.getBolsa());
-        this.add(boneca.getAcessorio());
         this.add(boneca.getRoupaS());
         this.add(boneca.getRoupaI());
         this.add(boneca.getVestido());

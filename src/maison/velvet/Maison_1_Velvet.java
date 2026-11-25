@@ -24,6 +24,7 @@ public class Maison_1_Velvet extends javax.swing.JFrame {
 
     JLabel jogar = new JLabel();
     JLabel modo_de_jogo = new JLabel();
+    JLabel sair = new JLabel();
 
     String tomPele = "";
 
@@ -44,10 +45,12 @@ public class Maison_1_Velvet extends javax.swing.JFrame {
 
         setContentPane(painelFundo);
 
-        criarLabel(600, 350, jogar, "jogar");
-        criarLabel(600, 495, modo_de_jogo, "modo");
+        criarLabel(600, 350,500, 115, jogar, "jogar");
+        criarLabel(600, 495,500, 115, modo_de_jogo, "modo");
+        criarLabel(1250, 30, 80, 80, sair, "sair");
         this.add(jogar);
         this.add(modo_de_jogo);
+        this.add(sair);
 
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         revalidate();
@@ -68,12 +71,12 @@ public class Maison_1_Velvet extends javax.swing.JFrame {
         this.tomPele = tomPele;
     }
 
-    public void criarLabel(int x, int y, JLabel label, String op) {
+    public void criarLabel(int x, int y, int largura, int altura, JLabel label, String op) {
         label.setText("  ");
         label.setOpaque(false);
-        label.setBounds(x, y, 500, 115);
+        label.setBounds(x, y, largura, altura);
+//        label.setBounds(x, y, 232, 90);
         label.addMouseListener(new MouseAdapter() {
-
             @Override
             public void mouseEntered(MouseEvent e) {
                 setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -93,9 +96,11 @@ public class Maison_1_Velvet extends javax.swing.JFrame {
                         break;
                     case "modo":
                         dispose();
-                        
+                        new Maison_5_Velvet_Modo_Jogo().setVisible(true);
                         break;
-
+                    case "sair":
+                        System.exit(0);
+                        break;
                 }
             }
         });
@@ -161,6 +166,7 @@ public class Maison_1_Velvet extends javax.swing.JFrame {
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

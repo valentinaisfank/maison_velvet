@@ -108,16 +108,16 @@ public class Maison_3_2_Velvet_Cabelos extends javax.swing.JFrame {
 
         mostrarBoneca(boneca);
 
-        criarLabelImagens(142, -92, 400, 800, c1, cebelo_um);
+        criarLabelImagens(142, -90, 400, 800, c1, cebelo_um);
         criarLabelImagens(142, -92, 400, 800, c2, cabelo_dois);
-        criarLabelImagens(142, -92, 400, 800, c3, cabelo_tres);
-        criarLabelImagens(145, -92, 400, 800, c4, cabelo_quatro);
-        criarLabelImagens(145, -92, 400, 800, c5, cabelo_cinco);
-        criarLabelImagens(142, -92, 400, 800, c6, cabelo_seis);
+        criarLabelImagens(145, -91, 400, 800, c3, cabelo_tres);
+        criarLabelImagens(143, -91, 400, 800, c4, cabelo_quatro);
+        criarLabelImagens(144, -90, 400, 800, c5, cabelo_cinco);
+        criarLabelImagens(142, -90, 400, 800, c6, cabelo_seis);
         criarLabelImagens(142, -92, 400, 800, c7, cabelo_sete);
         criarLabelImagens(145, -92, 400, 800, c8, cabelo_oito);
-        criarLabelImagens(142, -92, 400, 800, c9, cabelo_nove);
-        criarLabelImagens(142, -90, 400, 800, c10, cabelo_dez);
+        criarLabelImagens(140, -92, 400, 800, c9, cabelo_nove);
+        criarLabelImagens(141, -90, 400, 800, c10, cabelo_dez);
 
         this.add(this.peleEscolhida);
         this.add(this.cabeloEscolhido);
@@ -175,6 +175,7 @@ public class Maison_3_2_Velvet_Cabelos extends javax.swing.JFrame {
                 remove(c8);
                 remove(c9);
                 remove(c10);
+                remove(boneca.getCabelo());
                 switch (op) {
                     case "voltar":
                         dispose();

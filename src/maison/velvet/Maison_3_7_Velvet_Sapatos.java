@@ -183,6 +183,8 @@ public class Maison_3_7_Velvet_Sapatos extends javax.swing.JFrame {
                 remove(tpreto);
                 remove(croc);
                 remove(coturn);
+                remove(boneca.getSapato());
+                
                 switch (op) {
                     case "voltar":
                         dispose();
@@ -236,16 +238,15 @@ public class Maison_3_7_Velvet_Sapatos extends javax.swing.JFrame {
     }
     
     public void mostrarBoneca(Boneca boneca) {
+        this.add(boneca.getAcessorio());
         this.add(boneca.getCabelo());
         this.add(boneca.getBolsa());
-        this.add(boneca.getAcessorio());
         this.add(boneca.getRoupaS());
         this.add(boneca.getRoupaI());
         this.add(boneca.getVestido());
         this.add(boneca.getConjunto());
         this.add(boneca.getSapato());
         this.add(boneca.getPele());
-        revalidate();
         repaint();
 
     }

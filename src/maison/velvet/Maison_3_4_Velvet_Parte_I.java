@@ -88,9 +88,9 @@ public class Maison_3_4_Velvet_Parte_I extends javax.swing.JFrame {
         this.add(voltar);
 
         criarLabelImagens(90, 150, 400, 500, cpreta, cp);
-        criarLabelImagens(90, 150, 400, 500, cbege, cb);
-        criarLabelImagens(90, 150, 400, 500, cjeans, cj);
-        criarLabelImagens(90, 150, 400, 500, ccinza, cc);
+        criarLabelImagens(92, 150, 400, 500, cbege, cb);
+        criarLabelImagens(92, 150, 400, 500, cjeans, cj);
+        criarLabelImagens(92, 150, 400, 500, ccinza, cc);
         criarLabelImagens(90, 150, 350, 500, spreto, sp);
         criarLabelImagens(90, 150, 400, 500, sbranca, sb);
         criarLabelImagens(90, 140, 400, 500, sjeans, sj);
@@ -139,6 +139,7 @@ public class Maison_3_4_Velvet_Parte_I extends javax.swing.JFrame {
                 remove(sbranca);
                 remove(sjeans);
                 remove(srosa);
+                remove(boneca.getRoupaI());
 
                 switch (op) {
                     case "voltar":
@@ -184,13 +185,14 @@ public class Maison_3_4_Velvet_Parte_I extends javax.swing.JFrame {
     }
 
     public void mostrarBoneca(Boneca boneca) {
+        this.add(boneca.getAcessorio());
         this.add(boneca.getCabelo());
         this.add(boneca.getBolsa());
-        this.add(boneca.getAcessorio());
         this.add(boneca.getRoupaS());
         this.add(boneca.getRoupaI());
         this.add(boneca.getVestido());
         this.add(boneca.getConjunto());
+        this.add(boneca.getSapato());
         this.add(boneca.getPele());
         revalidate();
         repaint();

@@ -59,7 +59,7 @@ public class Maison_2_Velvet_Escolha_Inicial extends javax.swing.JFrame {
 
         setContentPane(painelFundo);
         if (ehInicio || this.boneca.getPele().getIcon() == null) {
-            criarLabelImagens(120, -122, 410, 800, pele_0, boneca_pele_zero);
+            criarLabelImagens(125, -120, 410, 800, pele_0, boneca_pele_zero);
             this.boneca.setPele(pele_0);
         }
 
@@ -151,7 +151,7 @@ public class Maison_2_Velvet_Escolha_Inicial extends javax.swing.JFrame {
                         break;
                     case "acessorio":
                         dispose();
-                        new Maison_3_8_2_Velvet_Acessorios(boneca).setVisible(true);
+                        new Maison_3_8_1_Velvet_Acessorios(boneca).setVisible(true);
                         break;
                     case "bolsa":
                         dispose();
@@ -159,6 +159,10 @@ public class Maison_2_Velvet_Escolha_Inicial extends javax.swing.JFrame {
                         break;
                     case "sair":
                         System.exit(0);
+                        break;
+                    case "pronto":
+                        dispose();
+                        new Maison_4_Velvet_Pronto(boneca).setVisible(true);
                         break;
                 }
             }

@@ -159,6 +159,7 @@ public class Maison_3_3Velvet_Parte_S extends javax.swing.JFrame {
 
             @Override
             public void mouseClicked(MouseEvent e) {
+                remove(boneca.getRoupaS());
                 remove (blusaEscolhida);
                 remove(vermelha);
                 remove(preta);

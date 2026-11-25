@@ -119,6 +119,7 @@ public class Maison_3_6_Velvet_Conjuntos extends javax.swing.JFrame {
                 remove (mverde);
                 remove (mrosa);
                 remove (mazul);
+                remove(boneca.getConjunto());
                 switch (op) {
                     case "voltar":
                         dispose();
@@ -155,13 +156,14 @@ public class Maison_3_6_Velvet_Conjuntos extends javax.swing.JFrame {
     }
 
     public void mostrarBoneca(Boneca boneca) {
+        this.add(boneca.getAcessorio());
         this.add(boneca.getCabelo());
         this.add(boneca.getBolsa());
-        this.add(boneca.getAcessorio());
         this.add(boneca.getRoupaS());
         this.add(boneca.getRoupaI());
         this.add(boneca.getVestido());
         this.add(boneca.getConjunto());
+        this.add(boneca.getSapato());
         this.add(boneca.getPele());
         revalidate();
         repaint();

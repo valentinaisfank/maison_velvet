@@ -69,8 +69,8 @@ public class Maison_3_1_Velvet_Pele extends javax.swing.JFrame {
         criarLabel(600, 410, 232, 170, pele_quatro, "pele quatro");
         criarLabel(915, 410, 232, 170, pele_cinco, "pele cinco");
         criarLabel(130, 580, 320, 80, voltar, "voltar");
-        criarLabelImagens(110, -120, 400, 800, boneca_0, boneca_pele_zero);
-        criarLabelImagens(110, -120, 400, 800, boneca_1, boneca_pele_um);
+        criarLabelImagens(110, -130, 400, 800, boneca_0, boneca_pele_zero);
+        criarLabelImagens(110, -122, 400, 800, boneca_1, boneca_pele_um);
         criarLabelImagens(110, -120, 400, 800, boneca_2, boneca_pele_dois);
         criarLabelImagens(110, -120, 400, 800, boneca_3, boneca_pele_tres);
         criarLabelImagens(110, -120, 400, 800, boneca_4, boneca_pele_quatro);

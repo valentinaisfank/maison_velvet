@@ -87,12 +87,12 @@ public class Maison_3_8_1_Velvet_Acessorios extends javax.swing.JFrame {
         this.add(voltar);
         this.add(proximo);
 
-        criarLabelImagens(155, 140, 400, 500, oquadrado, oq);
-        criarLabelImagens(155, 140, 400, 500, ocoracao, oc);
-        criarLabelImagens(155, 140, 400, 500, oredondo, or);
-        criarLabelImagens(155, 140, 400, 500, cpalha, cp);
-        criarLabelImagens(155, 140, 400, 500, brosa, br);
-        criarLabelImagens(155, 140, 400, 500, tbranca, tb);
+        criarLabelImagens(120, -160, 400, 500, oquadrado, oq);
+        criarLabelImagens(120, -160, 400, 500, ocoracao, oc);
+        criarLabelImagens(120, -163, 400, 500, oredondo, or);
+        criarLabelImagens(130, -175, 400, 500, cpalha, cp);
+        criarLabelImagens(130, -170, 400, 500, brosa, br);
+        criarLabelImagens(123, -165, 400, 500, tbranca, tb);
 
         mostrarBoneca(boneca);
 
@@ -106,7 +106,7 @@ public class Maison_3_8_1_Velvet_Acessorios extends javax.swing.JFrame {
         label.setOpaque(false);
         label.setBounds(x, y, largura, altura);
         Image imagemRedimensionada = imagem.getImage()
-                .getScaledInstance(500, 540, Image.SCALE_SMOOTH);
+                .getScaledInstance(345, 200, Image.SCALE_SMOOTH);
 //        label.setHorizontalAlignment(JLabel.CENTER);
         label.setIcon(new ImageIcon(imagemRedimensionada));
     }
@@ -136,6 +136,7 @@ public class Maison_3_8_1_Velvet_Acessorios extends javax.swing.JFrame {
                 remove(cpalha);
                 remove(brosa);
                 remove(tbranca);
+                remove(boneca.getAcessorio());
                 switch (op) {
                     case "voltar":
                         dispose();
@@ -174,13 +175,14 @@ public class Maison_3_8_1_Velvet_Acessorios extends javax.swing.JFrame {
     }
 
     public void mostrarBoneca(Boneca boneca) {
+        this.add(boneca.getAcessorio());
         this.add(boneca.getCabelo());
         this.add(boneca.getBolsa());
-        this.add(boneca.getAcessorio());
         this.add(boneca.getRoupaS());
         this.add(boneca.getRoupaI());
         this.add(boneca.getVestido());
         this.add(boneca.getConjunto());
+        this.add(boneca.getSapato());
         this.add(boneca.getPele());
         revalidate();
         repaint();
